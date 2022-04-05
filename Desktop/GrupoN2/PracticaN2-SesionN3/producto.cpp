@@ -8,6 +8,7 @@ using namespace std;
 // métodos de servicio
 void Producto::imprimir()
 {
+    system("clear");
     cout << "DATOS DE PRODUCTO:" << endl;
     cout << "=================" << endl;
     cout << "id: "<<id<<endl;
@@ -19,6 +20,7 @@ void Producto::imprimir()
 }
 void Producto::ingresar()
 {
+    system("clear");
     cout << "INGRESAR DATOS DE PRODUCTO:" << endl;
     cout << "=================" << endl;
     cout << "id: ";

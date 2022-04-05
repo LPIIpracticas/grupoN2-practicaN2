@@ -15,6 +15,7 @@ int main()
         {
             cout << "Desea continuar?(s/n): ";
             cin >> resp;
+            resp=tolower(resp);
             if (resp != 's' && resp != 'n')
                 cout << "ERROR: Ingrese solo 's' o 'n'..." << endl;
         } while (resp != 's' && resp != 'n');
