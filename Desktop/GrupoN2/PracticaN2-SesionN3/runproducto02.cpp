@@ -2,43 +2,18 @@
 #include "producto.h"
 #include "producto.cpp"
 int menu();
+void ejecutaMetodos(int opc, Producto *);
 
 int main()
 {
     char resp = ' ';
-    int n = 0;
-    float p = 0;
+
     Producto azucar;
     do
     {
         system("clear");
         int opc = menu();
-        switch (opc)
-        {
-        case 1:
-            azucar.ingresar();
-            break;
-        case 2:
-            cout << "Ingrese cantidad a aumentar en el stock: ";
-            cin >> n;
-            azucar.aumentarStock(n);
-            break;
-        case 3:
-            cout << "Ingrese cantidad a disminuir en el stock: ";
-            cin >> n;
-            azucar.disminuirStock(n);
-            break;
-        case 4:
-            cout << "IGV: " << azucar.calcularIGV() << endl;
-            break;
-        case 5:
-            cout << "Ingrese cantidad a disminuir en el stock: ";
-            cin >> p;
-            azucar.cambiarPrecio(p);
-            break;
-        case 6:
-            azucar.imprimir();
-        }
+        ejecutaMetodos(opc, &azucar);
         do
         {
             system("clear");
@@ -79,4 +54,37 @@ int menu()
         }
     } while (opc < 1 || opc > 7);
     return opc;
+}
+void ejecutaMetodos(int opc, Producto *ptrProducto)
+{
+    int n = 0;
+    float p = 0;
+
+    switch (opc)
+        {
+        case 1:
+            ptrProducto->ingresar();
+            break;
+        case 2:
+            cout << "Ingrese cantidad a aumentar en el stock: ";
+            cin >> n;
+            ptrProducto->aumentarStock(n);
+            break;
+        case 3:
+            cout << "Ingrese cantidad a disminuir en el stock: ";
+            cin >> n;
+            ptrProducto->disminuirStock(n);
+            break;
+        case 4:
+            cout << "IGV: " << ptrProducto->calcularIGV() << endl;
+            break;
+        case 5:
+            cout << "Ingrese cantidad a disminuir en el stock: ";
+            cin >> p;
+            ptrProducto->cambiarPrecio(p);
+            break;
+        case 6:
+            ptrProducto->imprimir();
+        }
+    
 }

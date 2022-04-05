@@ -17,6 +17,7 @@ void Producto::imprimir()
     cout << "cantidad: "<<cantidad<<endl;
     cout << "precio: "<<precio<<endl;
     cout << "estado: "<<estado<<endl;
+        system("pause");
 }
 void Producto::ingresar()
 {
